@@ -13,7 +13,7 @@ LangGraph Blackjack Agent の実装計画。
 | Step 2  | Domain Layer                         | [x] 完了   |
 | Step 3  | GameState 型定義                     | [x] 完了   |
 | Step 4  | Presentation Layer (CLI UI)          | [x] 完了   |
-| Step 5  | LangGraph Graph 骨格                 | [ ] 未着手 |
+| Step 5  | LangGraph Graph 骨格                 | [x] 完了   |
 | Step 6  | LangGraph ノード実装 (Deterministic) | [ ] 未着手 |
 | Step 7  | Infrastructure Layer                 | [ ] 未着手 |
 | Step 8  | AI Agent 実装                        | [ ] 未着手 |
@@ -128,17 +128,17 @@ LangGraph Blackjack Agent の実装計画。
 > 目的: LangGraph の StateGraph を構築し、ノード遷移の骨格を作る。
 > 各ノードはスタブ実装とし、start → end まで graph が流れることを確認する。
 
-- [ ] `src/application/graph/blackjack.graph.ts` 作成
-  - [ ] `StateGraph` の定義 (`GameState` をスキーマとして使用)
-  - [ ] 各ノードをスタブ関数として登録
-    - [ ] `dealInitialCards`
-    - [ ] `humanTurn`
-    - [ ] `aiTurn`
-    - [ ] `dealerTurn`
-    - [ ] `judge`
-  - [ ] ノード間の遷移 (edge) を定義
-  - [ ] graph のコンパイル (`graph.compile()`)
-- [ ] `src/index.ts` から graph を呼び出して動作確認
+- [x] `src/application/graph/blackjack.graph.ts` 作成
+  - [x] `StateGraph` の定義 (`GameState` をスキーマとして使用)
+  - [x] 各ノードをスタブ関数として登録
+    - [x] `dealInitialCards`
+    - [x] `humanTurn`
+    - [x] `aiTurn`
+    - [x] `dealerTurn`
+    - [x] `judge`
+  - [x] ノード間の遷移 (edge) を定義
+  - [x] graph のコンパイル (`graph.compile()`)
+- [x] `src/index.ts` から graph を呼び出して動作確認
 
 ---
 
