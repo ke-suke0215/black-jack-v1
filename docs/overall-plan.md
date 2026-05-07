@@ -14,7 +14,7 @@ LangGraph Blackjack Agent の実装計画。
 | Step 3  | GameState 型定義                     | [x] 完了   |
 | Step 4  | Presentation Layer (CLI UI)          | [x] 完了   |
 | Step 5  | LangGraph Graph 骨格                 | [x] 完了   |
-| Step 6  | LangGraph ノード実装 (Deterministic) | [ ] 未着手 |
+| Step 6  | LangGraph ノード実装 (Deterministic) | [x] 完了   |
 | Step 7  | Infrastructure Layer                 | [ ] 未着手 |
 | Step 8  | AI Agent 実装                        | [ ] 未着手 |
 | Step 9  | aiTurn ノード実装                    | [ ] 未着手 |
@@ -147,35 +147,35 @@ LangGraph Blackjack Agent の実装計画。
 > 目的: LLM を使わないノードをすべて実装し、Human vs Dealer のゲームを動作させる。
 > **このステップ完了時点で、CLI 上でゲームとして遊べる状態になる (マイルストーン 1)。**
 
-- [ ] `src/application/nodes/dealInitialCards.ts` 実装
-  - [ ] デッキ生成・シャッフル
-  - [ ] プレイヤー・AI・ディーラーへ 2 枚ずつ配布
-  - [ ] `GameState` 更新
+- [x] `src/application/nodes/dealInitialCards.ts` 実装
+  - [x] デッキ生成・シャッフル
+  - [x] プレイヤー・AI・ディーラーへ 2 枚ずつ配布
+  - [x] `GameState` 更新
 
-- [ ] `src/application/nodes/humanTurn.ts` 実装
-  - [ ] `CLIUI.askPlayerAction()` で入力受付
-  - [ ] `hit` → カードを引く
-  - [ ] `stand` → ターン終了
-  - [ ] bust 判定・ターン管理
+- [x] `src/application/nodes/humanTurn.ts` 実装
+  - [x] `CLIUI.askPlayerAction()` で入力受付
+  - [x] `hit` → カードを引く
+  - [x] `stand` → ターン終了
+  - [x] bust 判定・ターン管理
 
-- [ ] `src/application/nodes/dealerTurn.ts` 実装
-  - [ ] dealer rule に従い自動進行 (スコア 17 以上で stand)
-  - [ ] `BlackjackRuleEngine` を使用
+- [x] `src/application/nodes/dealerTurn.ts` 実装
+  - [x] dealer rule に従い自動進行 (スコア 17 以上で stand)
+  - [x] `BlackjackRuleEngine` を使用
 
-- [ ] `src/application/nodes/judge.ts` 実装
-  - [ ] `BlackjackRuleEngine` で勝敗判定
-  - [ ] `GameState.winner` を更新
-  - [ ] 結果を `CLIUI.showMessage()` で表示
+- [x] `src/application/nodes/judge.ts` 実装
+  - [x] `BlackjackRuleEngine` で勝敗判定
+  - [x] `GameState.winner` を更新
+  - [x] 結果を `CLIUI.showMessage()` で表示
 
-- [ ] graph の条件分岐 (bust 時のショートカットなど) を実装
-- [ ] `aiTurn` を一時的にスキップする遷移を設定
-- [ ] Human vs Dealer で動作確認
+- [x] graph の条件分岐 (bust 時のショートカットなど) を実装 (`addConditionalEdges`)
+- [x] `aiTurn` をスタブ (dealer へ転送) として設定
+- [x] Human vs Dealer で動作確認
 
 ---
 
 ## Step 7: Infrastructure Layer
 
-> 目的: OpenAI API との接続を確立する。
+> 目的: gemini との接続を確立する。
 
 - [ ] `src/infrastructure/llm/geminiClient.ts` 作成
   - [ ] LangChain の `ChatGoogleGenerativeAI` インスタンス設定
