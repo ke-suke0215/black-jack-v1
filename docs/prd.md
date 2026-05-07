@@ -69,9 +69,9 @@ Graph ベース workflow orchestration。
 
 LLM integration / tool calling。
 
-## OpenAI API
+## Google Gemini API
 
-LLM provider。
+LLM provider。低コストモデルを使用。
 
 ---
 
@@ -260,7 +260,7 @@ CLI はあくまで「入力/表示手段」の 1 つとして扱う。
 +----------------------+
 | Infrastructure Layer |
 |----------------------|
-| OpenAI API           |
+| Google Gemini API    |
 | LangChain            |
 +----------------------+
 ```
@@ -346,7 +346,7 @@ LLM に依存しない。
 
 ## 責務
 
-- OpenAI API
+- Google Gemini API
 - LangChain
 - Logging
 - Persistence（将来）
@@ -618,7 +618,7 @@ src/
 
   infrastructure/
     llm/
-      openaiClient.ts
+      geminiClient.ts
 
   prompts/
     blackjackPlayerPrompt.ts

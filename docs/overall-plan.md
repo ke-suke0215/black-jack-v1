@@ -9,7 +9,7 @@ LangGraph Blackjack Agent の実装計画。
 
 | Step    | 内容                                 | 状態       |
 | ------- | ------------------------------------ | ---------- |
-| Step 1  | プロジェクト初期化                   | [x] 未着手 |
+| Step 1  | プロジェクト初期化                   | [x] 完了   |
 | Step 2  | Domain Layer                         | [ ] 未着手 |
 | Step 3  | GameState 型定義                     | [ ] 未着手 |
 | Step 4  | Presentation Layer (CLI UI)          | [ ] 未着手 |
@@ -26,25 +26,24 @@ LangGraph Blackjack Agent の実装計画。
 
 > 目的: 開発環境を整える。依存ライブラリのインストールとディレクトリ構成の作成。
 
-- [ ] `pnpm init` でプロジェクト初期化
-- [ ] TypeScript インストール・`tsconfig.json` 設定
-- [ ] Biome インストール・設定 (`biome.json`)
-- [ ] dotenv インストール・`.env.example` 作成
-- [ ] LangGraph / LangChain / OpenAI SDK インストール
-- [ ] zod インストール
-- [ ] `src/` 以下のディレクトリ構成を作成
-  - [ ] `src/application/graph/`
-  - [ ] `src/application/nodes/`
-  - [ ] `src/domain/engines/`
-  - [ ] `src/agents/`
-  - [ ] `src/presentation/interfaces/`
-  - [ ] `src/presentation/cli/`
-  - [ ] `src/infrastructure/llm/`
-  - [ ] `src/prompts/`
-  - [ ] `src/tools/`
-  - [ ] `src/types/`
-- [ ] `src/index.ts` エントリポイント作成 (空)
-- [ ] `package.json` の scripts 設定 (`dev`, `build`, `lint`, `format`)
+- [x] `pnpm init` でプロジェクト初期化
+- [x] TypeScript インストール・`tsconfig.json` 設定
+- [x] Biome インストール・設定 (`biome.json`)
+- [x] dotenv インストール・`.env.example` 作成
+- [x] zod インストール
+- [x] `src/` 以下のディレクトリ構成を作成
+  - [x] `src/application/graph/`
+  - [x] `src/application/nodes/`
+  - [x] `src/domain/engines/`
+  - [x] `src/agents/`
+  - [x] `src/presentation/interfaces/`
+  - [x] `src/presentation/cli/`
+  - [x] `src/infrastructure/llm/`
+  - [x] `src/prompts/`
+  - [x] `src/tools/`
+  - [x] `src/types/`
+- [x] `src/index.ts` エントリポイント作成 (空)
+- [x] `package.json` の scripts 設定 (`dev`, `build`, `lint`, `format`)
 
 ---
 
@@ -178,10 +177,10 @@ LangGraph Blackjack Agent の実装計画。
 
 > 目的: OpenAI API との接続を確立する。
 
-- [ ] `src/infrastructure/llm/openaiClient.ts` 作成
-  - [ ] LangChain の `ChatOpenAI` インスタンス設定
-  - [ ] モデル・temperature などの設定
-- [ ] `.env` に `OPENAI_API_KEY` を設定
+- [ ] `src/infrastructure/llm/geminiClient.ts` 作成
+  - [ ] LangChain の `ChatGoogleGenerativeAI` インスタンス設定
+  - [ ] モデル (`gemini-2.0-flash` 等)・temperature などの設定
+- [ ] `.env` に `GOOGLE_API_KEY` を設定
 - [ ] API 疎通確認 (簡単なスクリプトで接続テスト)
 
 ---
