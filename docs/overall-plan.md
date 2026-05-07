@@ -11,7 +11,7 @@ LangGraph Blackjack Agent の実装計画。
 | ------- | ------------------------------------ | ---------- |
 | Step 1  | プロジェクト初期化                   | [x] 完了   |
 | Step 2  | Domain Layer                         | [x] 完了   |
-| Step 3  | GameState 型定義                     | [ ] 未着手 |
+| Step 3  | GameState 型定義                     | [x] 完了   |
 | Step 4  | Presentation Layer (CLI UI)          | [ ] 未着手 |
 | Step 5  | LangGraph Graph 骨格                 | [ ] 未着手 |
 | Step 6  | LangGraph ノード実装 (Deterministic) | [ ] 未着手 |
@@ -86,17 +86,17 @@ LangGraph Blackjack Agent の実装計画。
 > 目的: LangGraph の State スキーマを確定させる。
 > 全レイヤーが参照する中心的な型定義。
 
-- [ ] `src/types/gameState.ts` 作成
-  - [ ] `Card` 型のインポート
-  - [ ] `GameState` 型定義
-    - [ ] `deck: Card[]`
-    - [ ] `dealerHand: Card[]`
-    - [ ] `humanHand: Card[]`
-    - [ ] `aiHand: Card[]`
-    - [ ] `currentTurn: "human" | "ai" | "dealer" | "judge"`
-    - [ ] `winner?: "human" | "ai" | "dealer" | "draw"`
-    - [ ] `logs: string[]`
-  - [ ] `PlayerAction` 型定義 (`"hit"` | `"stand"`)
+- [x] `src/types/gameState.ts` 作成
+  - [x] `Card` 型のインポート
+  - [x] `GameState` 型定義
+    - [x] `deck: Card[]`
+    - [x] `dealerHand: Card[]`
+    - [x] `humanHand: Card[]`
+    - [x] `aiHand: Card[]`
+    - [x] `currentTurn: "human" | "ai" | "dealer" | "judge"`
+    - [x] `winner?: "human" | "ai" | "dealer" | "draw"`
+    - [x] `logs: string[]`
+  - [x] `PlayerAction` 型定義 (`"hit"` | `"stand"`)
 
 ---
 

@@ -96,7 +96,7 @@ describe("determineWinner", () => {
 
   it("2人が同スコアなら draw", () => {
     const human = makeHand(c("10"), c("9")); // 19
-    const ai = makeHand(c("10"), c("9"), c("spades")); // 19
+    const ai = makeHand(c("10"), c("9")); // 19
     const dealer = makeHand(c("10"), c("6")); // 16
     expect(determineWinner(human, ai, dealer)).toBe("draw");
   });
