@@ -12,7 +12,7 @@ LangGraph Blackjack Agent の実装計画。
 | Step 1  | プロジェクト初期化                   | [x] 完了   |
 | Step 2  | Domain Layer                         | [x] 完了   |
 | Step 3  | GameState 型定義                     | [x] 完了   |
-| Step 4  | Presentation Layer (CLI UI)          | [ ] 未着手 |
+| Step 4  | Presentation Layer (CLI UI)          | [x] 完了   |
 | Step 5  | LangGraph Graph 骨格                 | [ ] 未着手 |
 | Step 6  | LangGraph ノード実装 (Deterministic) | [ ] 未着手 |
 | Step 7  | Infrastructure Layer                 | [ ] 未着手 |
@@ -107,19 +107,19 @@ LangGraph Blackjack Agent の実装計画。
 
 ### GameUI Interface
 
-- [ ] `src/presentation/interfaces/gameUI.ts` 作成
-  - [ ] `GameUI` interface 定義
-    - [ ] `renderState(state: GameState): void`
-    - [ ] `askPlayerAction(): Promise<PlayerAction>`
-    - [ ] `showMessage(message: string): void`
+- [x] `src/presentation/interfaces/gameUI.ts` 作成
+  - [x] `GameUI` interface 定義
+    - [x] `renderState(state: GameState): void`
+    - [x] `askPlayerAction(): Promise<PlayerAction>`
+    - [x] `showMessage(message: string): void`
 
 ### CLIUI
 
-- [ ] `src/presentation/cli/cliUI.ts` 作成
-  - [ ] `CLIUI implements GameUI` 実装
-  - [ ] `renderState`: カード・スコアを整形してコンソール表示
-  - [ ] `askPlayerAction`: readline でユーザー入力受付 (`hit` / `stand`)
-  - [ ] `showMessage`: コンソールへのメッセージ出力
+- [x] `src/presentation/cli/cliUI.ts` 作成
+  - [x] `CLIUI implements GameUI` 実装
+  - [x] `renderState`: カード・スコアを整形してコンソール表示
+  - [x] `askPlayerAction`: readline でユーザー入力受付 (`hit` / `stand`)
+  - [x] `showMessage`: コンソールへのメッセージ出力
 
 ---
 
