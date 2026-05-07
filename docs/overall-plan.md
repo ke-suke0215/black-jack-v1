@@ -10,7 +10,7 @@ LangGraph Blackjack Agent の実装計画。
 | Step    | 内容                                 | 状態       |
 | ------- | ------------------------------------ | ---------- |
 | Step 1  | プロジェクト初期化                   | [x] 完了   |
-| Step 2  | Domain Layer                         | [ ] 未着手 |
+| Step 2  | Domain Layer                         | [x] 完了   |
 | Step 3  | GameState 型定義                     | [ ] 未着手 |
 | Step 4  | Presentation Layer (CLI UI)          | [ ] 未着手 |
 | Step 5  | LangGraph Graph 骨格                 | [ ] 未着手 |
@@ -54,30 +54,30 @@ LangGraph Blackjack Agent の実装計画。
 
 ### Card
 
-- [ ] `src/domain/card.ts` 作成
-  - [ ] `Suit` 型定義 (`hearts`, `diamonds`, `clubs`, `spades`)
-  - [ ] `Rank` 型定義 (`A`, `2`〜`10`, `J`, `Q`, `K`)
-  - [ ] `Card` 型定義
+- [x] `src/domain/card.ts` 作成
+  - [x] `Suit` 型定義 (`hearts`, `diamonds`, `clubs`, `spades`)
+  - [x] `Rank` 型定義 (`A`, `2`〜`10`, `J`, `Q`, `K`)
+  - [x] `Card` 型定義
 
 ### Deck
 
-- [ ] `src/domain/deck.ts` 作成
-  - [ ] 52枚のデッキ生成関数
-  - [ ] シャッフル関数
+- [x] `src/domain/deck.ts` 作成
+  - [x] 52枚のデッキ生成関数
+  - [x] シャッフル関数
 
 ### Hand
 
-- [ ] `src/domain/hand.ts` 作成
-  - [ ] `Hand` 型定義
-  - [ ] カードを手札に加える関数
+- [x] `src/domain/hand.ts` 作成
+  - [x] `Hand` 型定義
+  - [x] カードを手札に加える関数
 
 ### BlackjackRuleEngine
 
-- [ ] `src/domain/engines/blackjackRuleEngine.ts` 作成
-  - [ ] スコア計算 (Ace は 1 or 11 の最適判定)
-  - [ ] bust 判定 (スコア > 21)
-  - [ ] dealer rule (スコア 17 以上で stand)
-  - [ ] 勝敗判定 (`human` / `ai` / `dealer` / `draw`)
+- [x] `src/domain/engines/blackjackRuleEngine.ts` 作成
+  - [x] スコア計算 (Ace は 1 or 11 の最適判定)
+  - [x] bust 判定 (スコア > 21)
+  - [x] dealer rule (スコア 17 以上で stand)
+  - [x] 勝敗判定 (`human` / `ai` / `dealer` / `draw`)
 
 ---
 
