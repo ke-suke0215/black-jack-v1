@@ -39,3 +39,14 @@ export const RankSchema = z.enum([
   "K",
 ]);
 export const CardSchema = z.object({ suit: SuitSchema, rank: RankSchema });
+
+export const SUIT_SYMBOLS: Record<Suit, string> = {
+  hearts: "♥",
+  diamonds: "♦",
+  clubs: "♣",
+  spades: "♠",
+};
+
+export function formatCard(card: Card): string {
+  return `${card.rank}${SUIT_SYMBOLS[card.suit]}`;
+}

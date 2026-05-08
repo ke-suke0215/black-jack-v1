@@ -2,9 +2,11 @@ import { describe, expect, it } from "vitest";
 import {
   type Card,
   CardSchema,
+  formatCard,
   RANKS,
   type Rank,
   RankSchema,
+  SUIT_SYMBOLS,
   SUITS,
   type Suit,
   SuitSchema,
@@ -80,5 +82,22 @@ describe("CardSchema", () => {
   it("フィールドが欠けている場合はエラーになる", () => {
     expect(() => CardSchema.parse({ suit: "hearts" })).toThrow();
     expect(() => CardSchema.parse({ rank: "A" })).toThrow();
+  });
+});
+
+describe("SUIT_SYMBOLS", () => {
+  it("4つのスートの記号を持つ", () => {
+    expect(SUIT_SYMBOLS.hearts).toBe("♥");
+    expect(SUIT_SYMBOLS.diamonds).toBe("♦");
+    expect(SUIT_SYMBOLS.clubs).toBe("♣");
+    expect(SUIT_SYMBOLS.spades).toBe("♠");
+  });
+});
+
+describe("formatCard", () => {
+  it("ランクとスート記号を結合する", () => {
+    expect(formatCard({ rank: "Q", suit: "spades" })).toBe("Q♠");
+    expect(formatCard({ rank: "A", suit: "hearts" })).toBe("A♥");
+    expect(formatCard({ rank: "10", suit: "diamonds" })).toBe("10♦");
   });
 });

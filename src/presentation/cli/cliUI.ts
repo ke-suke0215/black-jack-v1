@@ -1,21 +1,14 @@
 import * as readline from "node:readline";
-import type { Suit } from "../../domain/card.js";
+import { formatCard } from "../../domain/card.js";
 import { calculateScore } from "../../domain/engines/blackjackRuleEngine.js";
 import type { GameState, PlayerAction } from "../../types/gameState.js";
 import type { GameUI } from "../interfaces/gameUI.js";
-
-const SUIT_SYMBOLS: Record<Suit, string> = {
-  hearts: "♥",
-  diamonds: "♦",
-  clubs: "♣",
-  spades: "♠",
-};
 
 export class CLIUI implements GameUI {
   renderState(state: GameState): void {
     const formatCards = (cards: GameState["humanHand"]): string => {
       if (cards.length === 0) return "(empty)";
-      return cards.map((c) => `${c.rank}${SUIT_SYMBOLS[c.suit]}`).join(" ");
+      return cards.map((c) => formatCard(c)).join(" ");
     };
 
     const dealerScore =

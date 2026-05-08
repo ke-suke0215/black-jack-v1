@@ -2,9 +2,9 @@ import { Annotation, END, START, StateGraph } from "@langchain/langgraph";
 import type { Card } from "../../domain/card.js";
 import type { WinnerResult } from "../../domain/engines/blackjackRuleEngine.js";
 import type { GameUI } from "../../presentation/interfaces/gameUI.js";
-import { aiTurn } from "../nodes/aiTurn.js";
-import { dealerTurn } from "../nodes/dealerTurn.js";
-import { dealInitialCards } from "../nodes/dealInitialCards.js";
+import { createAiTurnNode } from "../nodes/aiTurn.js";
+import { createDealerTurnNode } from "../nodes/dealerTurn.js";
+import { createDealInitialCardsNode } from "../nodes/dealInitialCards.js";
 import { createHumanTurnNode } from "../nodes/humanTurn.js";
 import { createJudgeNode } from "../nodes/judge.js";
 
@@ -49,10 +49,10 @@ function routeAfterHumanTurn(state: BlackjackState): "humanTurn" | "aiTurn" | "j
 
 export function createBlackjackGraph(ui: GameUI) {
   const workflow = new StateGraph(BlackjackStateAnnotation)
-    .addNode("dealInitialCards", dealInitialCards)
+    .addNode("dealInitialCards", createDealInitialCardsNode(ui))
     .addNode("humanTurn", createHumanTurnNode(ui))
-    .addNode("aiTurn", aiTurn)
-    .addNode("dealerTurn", dealerTurn)
+    .addNode("aiTurn", createAiTurnNode(ui))
+    .addNode("dealerTurn", createDealerTurnNode(ui))
     .addNode("judge", createJudgeNode(ui))
     .addEdge(START, "dealInitialCards")
     .addEdge("dealInitialCards", "humanTurn")
