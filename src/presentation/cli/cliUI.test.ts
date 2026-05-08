@@ -51,6 +51,7 @@ describe("CLIUI.renderState", () => {
     const ui = new CLIUI();
     const state: GameState = {
       ...emptyState,
+      currentTurn: "dealer",
       dealerHand: [
         { suit: "diamonds", rank: "10" },
         { suit: "clubs", rank: "7" },
@@ -59,6 +60,24 @@ describe("CLIUI.renderState", () => {
     ui.renderState(state);
     const output = logSpy.mock.calls.map((c) => c[0]).join("\n");
     expect(output).toContain("score: 17");
+  });
+
+  it("Human ターン中はディーラーの2枚目を隠す", () => {
+    const ui = new CLIUI();
+    const state: GameState = {
+      ...emptyState,
+      currentTurn: "human",
+      dealerHand: [
+        { suit: "spades", rank: "7" },
+        { suit: "hearts", rank: "5" },
+      ],
+    };
+    ui.renderState(state);
+    const output = logSpy.mock.calls.map((c) => c[0]).join("\n");
+    expect(output).toContain("7♠");
+    expect(output).toContain("[?]");
+    expect(output).not.toContain("5♥");
+    expect(output).not.toContain("score: 12");
   });
 
   it("空のハンドは (empty) と表示する", () => {
